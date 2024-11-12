@@ -17,7 +17,25 @@
 - Введите имя игрока (будет создан или использован файл для статистики).
 - Следуйте инструкциям на экране, чтобы угадывать число.
   ![image](https://github.com/user-attachments/assets/260e8ca6-10ea-41e0-bdc2-29ea00a122ae)
+'''
+static string GenerateNumber()
+{
+    Random rnd = new Random();
+    string requiredNum = "";
+    while (requiredNum.Length < 4)
+    {
+        string digitChar;
+        do
+        {
+            digitChar = rnd.Next(0, 10).ToString();
+        } while (requiredNum.Contains(digitChar));
+        requiredNum += digitChar;
+    }
 
+    return requiredNum;
+
+}
+'''
 
 # Контакты
 Автор: Danil D
